@@ -46,7 +46,7 @@ function handleUpdateUnControlledTask(task) {
 
   <!-- change directly -->
   <div class="task">
-    <span>ToRefTask</span>
+    <span>UseVmodelTask</span>
     <UseVmodelTask :task="lists[2]" />
     {{ lists[2] }}
   </div>

@@ -30,7 +30,7 @@ watch(
 watch(
   () => task,
   () => {
-    emits('update:task', task.value);
+    emits('update:task', {...task.value});
   },
   { deep: true }
 );
