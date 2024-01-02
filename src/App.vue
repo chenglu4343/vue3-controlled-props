@@ -5,9 +5,10 @@ import ToRefTask from './components/ToRefTask.vue';
 import UseVmodelTask from './components/UseVmodelTask.vue';
 import ControlledTask from './components/ControlledTask.vue';
 import UnControlledTask from './components/UnControlledTask.vue';
+import DefineModel from './components/DefineModel.vue';
 
 const lists = ref(
-  Array.from({ length: 5 }).map((item, index) => ({
+  Array.from({ length: 6 }).map((item, index) => ({
     title: `title${index}`,
     done: false,
   }))
@@ -51,6 +52,14 @@ function handleUpdateUnControlledTask(task) {
     {{ lists[2] }}
   </div>
 
+  <!-- change defineModel -->
+  <div class="task">
+    <span>defineModelTask</span>
+    <DefineModel :task="lists[3]"/>
+    {{ lists[3] }}
+  </div>
+
+
   <!-- change controlled -->
   <div class="mt-20">
     isAcceptChanged
@@ -59,10 +68,10 @@ function handleUpdateUnControlledTask(task) {
   <div class="task">
     <span>ControlledTask</span>
     <ControlledTask
-      :task="lists[3]"
+      :task="lists[4]"
       @update:task="handleUpdateControlledTask"
     />
-    {{ lists[3] }}
+    {{ lists[4] }}
   </div>
 
   <!-- change unControlled -->
@@ -73,10 +82,10 @@ function handleUpdateUnControlledTask(task) {
   <div class="task">
     <span>UnControlledCheck</span>
     <UnControlledTask
-      :task="lists[4]"
+      :task="lists[5]"
       @update:task="handleUpdateUnControlledTask"
     />
-    {{ lists[4] }}
+    {{ lists[5] }}
   </div>
 </template>
 
